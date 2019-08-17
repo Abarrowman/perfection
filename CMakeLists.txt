@@ -12,7 +12,8 @@ add_executable(perfection ${perfection_SOURCES})
 # Compiler specific
 if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
   # Hide Console
-  # set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
+  #set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
+  set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd\"4307\"" )
 endif()
 
 # Interface libraries with main executable
